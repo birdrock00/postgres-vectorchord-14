@@ -11,7 +11,7 @@ COPY ${DEB_FILENAME} /tmp/${DEB_FILENAME}
 # The deb package handles placing files in the correct Postgres extension directory
 RUN apt-get update && \
     apt-get install -y /tmp/${DEB_FILENAME} && \
-    apt-get install -y postgresql-14-pgvector
+    apt-get install -y postgresql-14-pgvector && \
     rm -rf /tmp/${DEB_FILENAME} /var/lib/apt/lists/*
 
 # Set the startup command
